@@ -3,16 +3,15 @@ def ruuf(ruuf_x, ruuf_y, panel_x, panel_y):
         if panel_x > ruuf_x and panel_y > ruuf_y:
             print('Caben 0')
         else:
-            ocupacion_vertical = (ruuf_x // panel_x) * (ruuf_y // panel_y)
-            ocupacion_horizontal = (ruuf_x // panel_y) * (ruuf_y // panel_x)
-            ocupacion_mixta_horizontal = (ruuf_x // panel_x) * (ruuf_y // panel_y) + (ruuf_y % panel_y) // panel_x
-            ocupacion_mixta_vertical = (ruuf_x // panel_y) * (ruuf_y // panel_x) + (ruuf_x % panel_y) // panel_x
-            print(f'Caben {max(ocupacion_horizontal, ocupacion_vertical, ocupacion_mixta_horizontal, ocupacion_mixta_vertical)}')
+            ocupacion_mixta_horizontal = (ruuf_x // panel_x) * (ruuf_y // panel_y) + (((ruuf_y % panel_y)//panel_x)*(ruuf_x//panel_y))
+            ocupacion_mixta_vertical = (ruuf_y // panel_x) * (ruuf_x // panel_y) + (((ruuf_x % panel_y)//panel_x)*(ruuf_y//panel_y))
+            max_ocupacion = max(ocupacion_mixta_horizontal, ocupacion_mixta_vertical)
+            print(f'Caben {max_ocupacion}')
     else:
         print("Las dimensiones deben ser mayores o iguales a uno.")
 
-x = 3
-y = 5
-a = 1
+x = 1
+y = 10
+a = 2
 b = 2
 ruuf(x, y, a, b)
