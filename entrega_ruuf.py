@@ -10,8 +10,8 @@ def ruuf(ruuf_x, ruuf_y, panel_x, panel_y):
     else:
         print("Las dimensiones deben ser mayores o iguales a uno.")
 
-x = 1
-y = 10
-a = 2
+x = 3
+y = 5
+a = 1
 b = 2
 ruuf(x, y, a, b)
